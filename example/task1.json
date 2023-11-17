@@ -1,0 +1,7 @@
+{
+    "title": "Task title",
+    "difficulty": 1,
+    "tags": ["introduction", "empty"],
+    "text": "task1.md",
+    "solution": "task1.c"
+}
