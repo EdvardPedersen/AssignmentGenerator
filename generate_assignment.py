@@ -40,10 +40,19 @@ class App:
 
         self.setup_layout()
 
+        if self.arguments.full:
+            for fn in self.metadata:
+                self.list_tasks.insert(0,self.metadata[fn]["title"])
+            self.generate_output()
+            exit(0)
+
+
+
     def parse_arguments(self):
         parser = argparse.ArgumentParser()
         parser.add_argument("-t", "--task_dir", help="Directory containing tasks to solve, default 'tasks/'", default="tasks/")
         parser.add_argument("-a", "--assignment", help="Assignment title, default 'Assignment'", default="Assignment")
+        parser.add_argument("-f", "--full", help="Generate assignment containing all tasks", action='store_true')
         self.arguments = parser.parse_args()
 
     def run(self):
